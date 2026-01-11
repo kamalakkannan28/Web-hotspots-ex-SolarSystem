@@ -1,157 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Solar System</title>
+  <title>Solar System Explorer</title>
 
-  <!-- Mobile viewport (VERY IMPORTANT) -->
+  <!-- Mobile Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    function showPlanet(planet) {
-      const planets = document.getElementsByClassName("planet-info");
-      for (let i = 0; i < planets.length; i++) {
-        planets[i].style.display = "none";
-      }
-      document.getElementById(planet).style.display = "block";
-      window.scrollTo(0, document.getElementById(planet).offsetTop);
-    }
-  </script>
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 8px;
-      font-family: Arial, sans-serif;
-      background: midnightblue;
-      color: white;
-    }
-
-    h2, h3 {
-      text-align: center;
-      color: lightyellow;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 15px;
-      text-align: justify;
-    }
-
-    .about {
-      background: steelblue;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 10px;
-    }
-
-    /* Buttons */
-    button {
-      width: 45%;
-      padding: 12px;
-      margin: 6px 2px;
-      background: orange;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    button:hover {
-      background: darkorange;
-    }
-
-    /* Planet cards */
-    .planet-info {
-      display: none;
-      background: cadetblue;
-      margin: 15px auto;
-      padding: 15px;
-      width: 95%;
-      border-radius: 15px;
-    }
-
-    /* Responsive images */
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      padding: 6px 0;
-      border-bottom: 1px solid lightgray;
-      font-size: 14px;
-    }
-
-    /* Very small screens (Redmi A5 safe) */
-    @media (max-width: 480px) {
-      p {
-        font-size: 14px;
-      }
-      button {
-        width: 100%;
-      }
-    }
-  </style>
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
 </head>
 
 <body>
 
 <h2>🌌 <u>Solar System Explorer</u> 🚀</h2>
 
+<!-- ABOUT SECTION -->
 <div class="about">
   <p>
     The Solar System consists of the Sun and all the celestial bodies that revolve around it.
-    The Sun is a huge star located at the center of the Solar System.
-    Eight planets orbit the Sun due to its strong gravitational force.
+    The Sun is the center of the Solar System and provides heat and light.
+    Eight planets move around the Sun due to gravitational force.
     These planets are Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.
     The Solar System also includes moons, asteroids, comets, and meteoroids.
-    Each planet has its own unique size, structure, and atmosphere.
-    The Solar System formed billions of years ago from a cloud of gas and dust.
-    It is part of our galaxy called the Milky Way.
+    Each planet has unique features and characteristics.
+    Earth is the only known planet that supports life.
+    Jupiter is the largest planet in the Solar System.
+    The Solar System formed billions of years ago.
+    It is part of the Milky Way galaxy.
   </p>
 </div>
 
+<!-- SOLAR SYSTEM IMAGE -->
 <center>
-  <img src="Solarsystem.jpg">
+  <img src="Solarsystem.jpg" alt="Solar System">
 </center>
 
 <p style="text-align:center;">
-  👆 Tap a planet button to learn more
+  👉 Click on any planet button to learn more about it.
 </p>
 
 <hr>
 
+<!-- PLANET BUTTONS -->
 <center>
   <button onclick="showPlanet('mercury')">🌑 Mercury</button>
-  <button onclick="showPlanet('venus')">🌕 Venus</button>
+  <button onclick="showPlanet('venus')">🌕 Venus</button><br>
+
   <button onclick="showPlanet('earth')">🌍 Earth</button>
-  <button onclick="showPlanet('mars')">🔴 Mars</button>
+  <button onclick="showPlanet('mars')">🔴 Mars</button><br>
+
   <button onclick="showPlanet('jupiter')">🟠 Jupiter</button>
-  <button onclick="showPlanet('saturn')">💍 Saturn</button>
+  <button onclick="showPlanet('saturn')">💍 Saturn</button><br>
+
   <button onclick="showPlanet('uranus')">❄️ Uranus</button>
   <button onclick="showPlanet('neptune')">🌊 Neptune</button>
 </center>
 
 <hr>
 
-<!-- PLANET TEMPLATE (same structure for all) -->
-
+<!-- MERCURY -->
 <div id="mercury" class="planet-info">
   <h3>🌑 Mercury</h3>
   <center><img src="mercury.jpg"></center>
   <p>
     Mercury is the smallest planet in the Solar System.
-    It is closest to the Sun.
-    It has no atmosphere to trap heat.
-    Temperatures vary greatly.
-    Mercury orbits the Sun very quickly.
+    It is the closest planet to the Sun.
+    Mercury has no atmosphere to trap heat.
+    Because of this, it experiences extreme temperatures.
+    It completes one orbit around the Sun very quickly.
   </p>
   <ul>
     <li>📏 Diameter: 4,879 km</li>
@@ -160,15 +79,16 @@
   </ul>
 </div>
 
+<!-- VENUS -->
 <div id="venus" class="planet-info">
   <h3>🌕 Venus</h3>
   <center><img src="venus.jpg"></center>
   <p>
     Venus is the second planet from the Sun.
     It is similar in size to Earth.
-    It has a thick carbon dioxide atmosphere.
-    Heat is trapped strongly.
-    Venus is the hottest planet.
+    Venus has a thick carbon dioxide atmosphere.
+    This causes a strong greenhouse effect.
+    It is the hottest planet in the Solar System.
   </p>
   <ul>
     <li>📏 Diameter: 12,104 km</li>
@@ -177,15 +97,16 @@
   </ul>
 </div>
 
+<!-- EARTH -->
 <div id="earth" class="planet-info">
   <h3>🌍 Earth</h3>
   <center><img src="earth.jpg"></center>
   <p>
     Earth is the third planet from the Sun.
-    It supports life.
-    Air and water are present.
-    The atmosphere protects life.
-    One orbit takes one year.
+    It is the only planet known to support life.
+    Earth has air, water, and suitable temperature.
+    Its atmosphere protects living beings.
+    Earth completes one orbit in one year.
   </p>
   <ul>
     <li>📏 Diameter: 12,742 km</li>
@@ -194,15 +115,16 @@
   </ul>
 </div>
 
+<!-- MARS -->
 <div id="mars" class="planet-info">
   <h3>🔴 Mars</h3>
   <center><img src="mars.jpg"></center>
   <p>
-    Mars is called the Red Planet.
-    Iron oxide gives red color.
-    It has mountains and valleys.
-    Scientists study Mars.
-    It has two moons.
+    Mars is known as the Red Planet.
+    Its red color is due to iron oxide.
+    Mars has mountains and valleys.
+    Scientists search for signs of water on Mars.
+    It has two small moons.
   </p>
   <ul>
     <li>📏 Diameter: 6,779 km</li>
@@ -211,15 +133,16 @@
   </ul>
 </div>
 
+<!-- JUPITER -->
 <div id="jupiter" class="planet-info">
   <h3>🟠 Jupiter</h3>
   <center><img src="jupiter.jpg"></center>
   <p>
-    Jupiter is the largest planet.
-    It is a gas giant.
+    Jupiter is the largest planet in the Solar System.
+    It is a gas giant made mainly of hydrogen.
+    Jupiter has a strong magnetic field.
     It has many moons.
-    A strong magnetic field exists.
-    The Great Red Spot is a storm.
+    The Great Red Spot is a giant storm.
   </p>
   <ul>
     <li>📏 Diameter: 139,820 km</li>
@@ -228,15 +151,16 @@
   </ul>
 </div>
 
+<!-- SATURN -->
 <div id="saturn" class="planet-info">
   <h3>💍 Saturn</h3>
   <center><img src="saturn.jpg"></center>
   <p>
-    Saturn has beautiful rings.
-    It is a gas giant.
-    Rings are ice and rock.
-    Many moons orbit it.
-    It is very large.
+    Saturn is famous for its beautiful rings.
+    It is a gas giant planet.
+    The rings are made of ice and rock.
+    Saturn has many moons.
+    It is the second-largest planet.
   </p>
   <ul>
     <li>📏 Diameter: 116,460 km</li>
@@ -245,15 +169,16 @@
   </ul>
 </div>
 
+<!-- URANUS -->
 <div id="uranus" class="planet-info">
   <h3>❄️ Uranus</h3>
   <center><img src="uranus.jpg"></center>
   <p>
-    Uranus is an ice giant.
+    Uranus is an ice giant planet.
     It rotates on its side.
-    Seasons are extreme.
-    It looks blue-green.
-    Methane causes the color.
+    This causes extreme seasons.
+    Uranus appears blue-green in color.
+    Methane gas causes its color.
   </p>
   <ul>
     <li>📏 Diameter: 50,724 km</li>
@@ -262,15 +187,16 @@
   </ul>
 </div>
 
+<!-- NEPTUNE -->
 <div id="neptune" class="planet-info">
   <h3>🌊 Neptune</h3>
   <center><img src="neptune.jpg"></center>
   <p>
-    Neptune is farthest from the Sun.
-    It is an ice giant.
-    Winds are extremely strong.
-    It looks deep blue.
-    The atmosphere is cold and stormy.
+    Neptune is the farthest planet from the Sun.
+    It is an ice giant planet.
+    Neptune has very strong winds.
+    It appears deep blue in color.
+    It has a cold and stormy atmosphere.
   </p>
   <ul>
     <li>📏 Diameter: 49,244 km</li>
@@ -280,5 +206,5 @@
 </div>
 
 </body>
-      </html>
-      
+    </html>
+    
